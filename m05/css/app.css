@@ -1,0 +1,231 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+*,*::before,*::after {
+	box-sizing:border-box;
+}
+
+:root {
+	--header-height:3rem;
+}
+
+body {
+font-family: 'Raleway', ;
+	font-size:100%;
+}
+
+
+.ui-mobile .ui-page-active {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	display:flex;
+	flex-direction:column;
+}
+[data-role='main'] {
+	flex: 1 1 100%;
+	overflow:hidden;
+	position:relative;
+	z-index:1;
+}
+
+[data-role='header'],
+[data-role='footer'] {
+	height:var(--header-height);
+	line-height:var(--header-height);
+	background-color:white;
+	border-width:0;
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.25);
+	position:relative;
+	z-index:2;
+}
+.ui-header .ui-title,
+.ui-footer .ui-title {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+
+
+
+
+.ui-header ul,
+.ui-footer ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	display:flex;
+	position:relative;
+}
+.ui-footer li {
+	flex: 1 1 auto;
+	text-align:center;
+}
+.ui-header a,
+.ui-footer a {
+	display:block;
+	color:inherit;
+	font-weight:bold;
+	text-decoration:none;
+}
+.ui-header a {
+	padding:0 1em;
+}
+
+
+
+
+.display-flex { display:flex; }
+
+.flex-stretch { flex:1 1 auto; }
+.flex-none { flex:none; }
+
+
+
+
+#recent-page [data-role='main'] {
+	background-image:url(../img/map.png);
+}
+
+.logo{
+	position: absolute;
+width: 52px;
+height: 16px;
+left: 18px;
+top: 53px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+text-align: center;
+
+color: #000000;
+}
+
+#pswd{
+	position: absolute;
+width: 307px;
+height: 64px;
+left: 34px;
+top: 600px;
+
+background: #F5D6D1;
+border-radius: 23px;
+}
+#usrnm{
+	position: absolute;
+width: 307px;
+height: 64px;
+left: 34px;
+top: 504px;
+
+background: #CAD8A2;
+border-radius: 23px;
+}
+.loginart{
+position: absolute;
+width: 280px;
+height: 110px;
+left: 5px;
+top: 140px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+}
+.loginladym{
+	position: absolute;
+width: 265px;
+height: 100px;
+left: 126px;
+top: 220px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+.loginfashion{
+	position: absolute;
+width: 290px;
+height: 90px;
+left: 43px;
+top: 320px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+.loginbtn{
+  text-decoration: none;
+    padding: 12px 130px;
+    transition: all .5s;
+    position: absolute;
+    width: 307px;
+    height: 64px;
+    left: 34px;
+    top: 696px;
+    background: #F0B33E;
+    border-radius: 23px;
+    text-align: center;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+}
+.keep{
+	position: absolute;
+height: 20px;
+left: 110px;
+top: 770px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 14px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+}
+.ui-input-text, .ui-input-search {
+    margin: .5em 0;
+    border-width: 1px;
+    border-style: none;
+}

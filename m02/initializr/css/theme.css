@@ -1,0 +1,79 @@
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:100i,400&display=swap" rel="stylesheet">
+
+.header-container, .footer-container, .main aside {
+    background: #dab692;
+}
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background: #8a9ea7;
+    font-family: 'Open Sans', sans-serif;
+}
+.header-container {
+    border-bottom: 10px solid #8f5b34;
+}
+.title {
+    color: #404040;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+    text-transform: capitalize;
+    font-family: 'Raleway', sans-serif;
+    float:left;
+}
+h2 {
+    font-size: 2em;
+ margin: .67em 0;
+    text-transform: capitalize;
+    font-family: 'Raleway', sans-serif;
+     float:left;
+
+}
+h3 {
+    font-size: 2em;
+ margin: .67em 0;
+     text-transform: capitalize;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+
+p{
+	line-height: 2em;
+	text-align:justify;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    background-color: #F2EFE9;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%
+}
+
+@media only screen and (min-width: 480px)
+nav a {
+    float: left;
+    width: 27%;
+    margin: 0 1.7%;
+    padding: 25px 2%;
+    margin-bottom: 0;
+    border-radius: 100px;
+
+}

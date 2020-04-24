@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pop Up Store Tracker</title>
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="lib/js/jquery-2.2.4.min.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/app.js"></script>
+	
+	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+</head>
+<body>
+
+	<section data-role="page" id="login-page">
+			<div data-role="main" class="display-flex flex-vertical scrollable">
+			 <h1 class="logo">UPOP</h1>
+			 <p class="loginart">ART SHOP</p>
+			<p class="loginladym">LADY M</p>
+			<p class="loginfashion">FASHION SHOP</p>
+
+			<div class="flex-stretch"></div>
+			<div class="flex-none">
+				<form id="login-form" data-ajax="false" style="padding:1em">
+					<div class="form-control">
+						<label class="form-label" for="login-username"></label>
+						<label class="hotdog1 display-flex">
+							<input class="flex-stretch" type="username" placeholder="Type your Username" data-role="none" id="login-username">
+							<span class="iconify" data-inline="false" data-icon="ant-design:user-outlined" style="font-size: 30px;"></span>
+						</label>
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="login-password"></label>
+						<label class="hotdog2 display-flex">
+							<input class="flex-stretch " type="password" placeholder="Type your Password" data-role="none" id="login-password">
+							<span class="iconify" data-inline="false" data-icon="bx:bx-lock-alt" style="font-size: 30px;"></span>
+						</label>
+					</div>
+					<div class="form-control hotdog3 ">
+						<input type="submit" class="form-button" value="Login" data-role="none" />
+					</div>
+					<div class="form-control text-center" style="margin:1em 0">
+						<a href="#signup-page"><small>Sign Up</small></a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section data-role="page" id="signup-page">
+		<div data-role="main">
+			<form id="signup-form">
+				<div class="form-control">
+					<label class="form-label" for="signup-username">Username</label>
+					<input class="form-input" type="text" placeholder="Type your Username" data-role="none" id="signup-username">
+				</div>
+				<div class="form-control">
+					<label class="form-label" for="signup-password">Password</label>
+					<input class="form-input" type="password" placeholder="Type your Password" data-role="none" id="signup-password">
+				</div>
+				<div class="form-control">
+					<label class="form-label" for="signup-password2">Password Again</label>
+					<input class="form-input" type="password" placeholder="Type your Password" data-role="none" id="signup-password2">
+				</div>
+				<div class="form-control">
+					<a href="#recent-page" class="form-button">Signup</a>
+				</div>
+				<div class="form-control text-center" style="margin:1em 0">
+					<a href="#login-page"><small>Login</small></a>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section data-role="page" id="recent-page">
+		<header data-role="header">
+			<h1>Recent Locations</h1>
+		</header>
+		<div data-role="main">
+			
+			<div class="marker" data-toggle="#recent-page .basin">
+				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #CAD8A2; font-size: 40px;"></span>
+			</div>
+
+				<div class="marker_1" data-toggle="#recent-page .basin">
+				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #F0B33E; font-size: 40px;"></span>
+			</div>
+
+				<div class="marker_2" data-toggle="#recent-page .basin">
+				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #F5D6D1; font-size: 40px;"></span>
+			</div>
+				<div class="marker_3" data-toggle="#recent-page .basin">
+				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #9ABFD5; font-size: 40px;"></span>
+			</div>
+				<div class="marker_4" data-toggle="#recent-page .basin">
+				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #E1C6A0; font-size: 40px;"></span>
+			</div>
+
+			<div class="nav-air circle bottom right">
+				<a href="#" data-activate="#map-add-modal">+</a>
+			</div>
+		</div>
+		<div class="basin">
+			<div class="basinname">Lady M</div><div class="basintype">Food</div>
+<div class="basindetails">Opening Hours<br><br>
+	<div class="basinopeninghours">March 24th-April 14th<br>Mon-Fri 10am to 6pm<br>Sat-Sun 11am to 4pm </div></div>
+			<img src="img/popupstore1.png" style="width: 30%;margin-top: -100px; margin-left: 30px;"></img>
+            
+			                                                  
+		</div>
+		</div>
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+			<div class="modal" id="map-add-modal">
+			<div class="modal-back" data-deactivate="#map-add-modal"></div>
+			<form data-ajax="false" id="map-add-form" class="modal-popup">
+				<div class="modal-head">
+					New Pop-up Store
+				</div>
+				<div class="modal-body">
+					<div class="form-control">
+						<label class="form-label" for="map-add-name">Name</label>
+						<input class="form-input" type="text" placeholder="Pop up store Name" data-role="none" id="map-add-name">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="map-add-type">Type</label>
+						<select class="form-button" id="map-add-type" data-role="none">
+							<option>Fashion </option>
+							<option>Food</option>
+							<option>Art</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="map-add-opening-hours">Opening hours</label>
+						<input class="form-input" type="text" placeholder="Opening hours" data-role="none" id="map-add-opening-hours">
+					</div>
+				</div>
+				<div class="modal-foot">
+					<button type="button" class="form-button" data-role="none" data-deactivate="#map-add-modal">Submit</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section data-role="page" id="list-page">
+	<header>
+		<div id="e85_4"></div>
+			<h1 class="listpagetitle">List Page</h1>
+				<a href="#recent-page" class="backarrow"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				
+				<a href="#" data-activate="#list-add-modal" class="addmodal"><span class="iconify" data-inline="false" data-icon="ant-design:plus-circle-outlined"></span></a>
+				</div>
+			</div>
+		</header>
+
+		<div data-role="main">
+				<!-- ul>li*10>{Dog $} -->
+				<ul class="animallist storelist scrollable">
+					<!-- li.animallist-item*10>a[href="#animal-profile-page"].display-flex>(div.flex-none.animallist-image>img[src="https://via.placeholder.com/300?text=Dog $"])+div.flex-stretch.animallist-title>{Dog $} -->
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">Cupcake ATM</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">Lady M</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">Poketo Pop-Up Store</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">STORY</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">YSL</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">Hill City Pop-Up</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">Minted Local 7</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">Dolls Kills</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">Gump's</div>
+						</a></li>
+					<li class="animallist-item"><a href="#animal-profile-page" class="display-flex">
+							<div class="flex-none animallist-image"><img src="img/popupstore1.png" alt=""></div>
+							<div class="flex-stretch animallist-title">Rare Device</div>
+						</a></li>
+				</ul>
+		</div>
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+
+		<div class="modal" id="list-add-modal">
+			<div class="modal-back" data-deactivate="#list-add-modal"></div>
+			<form data-ajax="false" id="list-add-form" class="modal-popup">
+				<div class="modal-head">
+					New Pop-up Store
+				</div>
+				<div class="modal-body">
+					<div class="form-control">
+						<label class="form-label" for="list-add-name">Name</label>
+						<input class="form-input" type="text" placeholder="Pop up store Name" data-role="none" id="list-add-name">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="list-add-type">Type</label>
+						<select class="form-button" id="list-add-type" data-role="none">
+							<option>Fashion </option>
+							<option>Food</option>
+							<option>Art</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="list-add-opening-hours">Opening hours</label>
+						<input class="form-input" type="text" placeholder="Opening hours" data-role="none" id="list-add-opening-hours">
+					</div>
+				</div>
+				<div class="modal-foot">
+					<button type="button" class="form-button" data-role="none" data-deactivate="#list-add-modal">Submit</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section data-role="page" id="animal-profile-page">
+		<header data-role="header">
+			<ul>
+				<li class="flex-none">
+						<a href="#recent-page" class="backarrowstoreprofile"><span class="iconify " data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				</li>
+				<li class="flex-stretch"><span class="iconify heart" data-inline="false" data-icon="ant-design:heart-outlined" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></li>
+				<li class="flex-none">
+				<a href="#" data-activate="#list-edit-modal" class="editicon">
+        <span class="iconify" data-inline="false" data-icon="bytesize:edit" style="font-size: 30px;"></span></a>
+				</li>
+			</ul>
+		</header>
+		<div data-role="main">
+        <img src="img/profile.png" style="position: absolute;width: 140px;height: 140px;left: 118px;top: 100px;border-radius: 50%;"></div>	
+        <h1 class="profile_head">YSL</h1>
+        <p class="profile_type">Fashion</p>
+        <p class="times">2 times</p> 
+        <div class="shop_info"></div>
+        <div class="dot1"></div>
+        <p class="date1">2020/03/17</p>
+        <div class="line"></div>
+         <div class="dot2"></div>
+        <p class="date2">2020/01/01</p>
+        <p class="openinghours">Opening Hours<br>
+M-F: 10am to 5pm, Next week</p>
+
+		</div>
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+
+		<div class="modal" id="list-edit-modal">
+			<div class="modal-back" data-deactivate="#list-edit-modal"></div>
+			<form data-ajax="false" id="list-add-form" class="modal-popup">
+				<div class="modal-head">
+					Edit Pop-up Store
+				</div>
+				<div class="modal-body">
+					<div class="form-control">
+						<label class="form-label" for="list-add-name">Name</label>
+						<input class="form-input" type="text" placeholder="Pop up store Name" data-role="none" id="list-add-name">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="list-add-type">Type</label>
+						<select class="form-button" id="list-add-type" data-role="none">
+							<option>Fashion </option>
+							<option>Food</option>
+							<option>Art</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="list-add-breed">Opening hours</label>
+						<input class="form-input" type="text" placeholder="Opening hours" data-role="none" id="list-add-breed">
+					</div>
+				</div>
+				<div class="modal-foot">
+					<button type="button" class="form-button" data-role="none">Submit</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section data-role="page" id="profile-page">
+		<header data-role="header">
+			<ul>
+				<li class="flex-none">
+						<a href="#recent-page" class="backarrowstoreprofile"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				</li>
+				<li class="flex-stretch"><a href="#" data-activate="#edit-profile-modal" class="editicon">
+        <span class="iconify" data-inline="false" data-icon="bytesize:edit" style="font-size: 30px;"></span></a></li>
+			</ul>
+		</header>
+			<div data-role="main">
+        <img src="img/user.png" style="position: absolute;width: 140px;height: 140px;left: 118px;top: 100px;border-radius: 50%;"></div>	
+        <h1 class="user_head">Janet</h1>
+
+        <a href="#shop-edit-page" data-activate="#list-edit-modal">
+        <span class="iconify editicon" data-inline="false" data-icon="bytesize:edit" style="font-size: 30px;"></span></a>
+        <div class="user_info"></div>
+        <span class="iconify fav" data-inline="false" data-icon="ant-design:heart-outlined" style="font-size: 30px;"></span>
+        <p class="favp">Favorite Shop
+       <ul>
+       	<li>Lady M</li>
+       	<li>YSL</li>
+        <li>Sprinkle</li>
+       </ul>
+   </p>
+        <span class="iconify calendar" data-inline="false" data-icon="ant-design:calendar-outlined" style="font-size: 30px;"></span>
+        <p class="calendarp">Days on UPOP -28 DAYS</p>
+        <span class="iconify paw" data-inline="false" data-icon="cil:paw" style="font-size: 30px;"></span>
+        <p class="pawp">Places have been to</p>
+
+		</div>
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+	</section>
+
+	<section data-role="page" id="profile-edit-page">
+		<header data-role="header">
+			<h1>User Profile</h1>
+			<ul>
+				<li class="flex-none">
+					<a href="#" data-rel="back">back</a>
+				</li>
+				<li class="flex-stretch"></li>
+				<li class="flex-none">
+					<a href="#list-page">next</a>
+				</li>
+			</ul>
+		</header>
+		<div data-role="main">
+			Edit User Profile
+		</div>
+	</section>
+
+<section data-role="page" id="edit-store-page">
+			<form data-ajax="false" id="edit-store-form" class="modal-popup">
+				<div class="modal-head">
+					Edit Pop-up Store
+				</div>
+				<div class="modal-body">
+					<div class="form-control">
+						<label class="form-label" for="edit-store-name">Name</label>
+						<input class="form-input" type="text" placeholder="Pop up store Name" data-role="none" id="edit-store-name">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-store-type">Type</label>
+						<select class="form-button" id="edit-store-type" data-role="none">
+							<option>Fashion </option>
+							<option>Food</option>
+							<option>Art</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-opening-hours">Opening hours</label>
+						<input class="form-input" type="text" placeholder="Opening hours" data-role="none" id="edit-opening-hours">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-address">Address</label>
+						<input class="form-input" type="text" placeholder="Address" data-role="none" id="edit-address">
+					</div>
+				</div>
+				<div class="modal-foot"><a href="#animal-profile-page">
+					<button type="button" class="form-button" data-role="none">Submit</button></a>
+				</div>
+			</form>
+	</section>
+
+	<div class="modal" id="edit-profile-modal">
+			<div class="modal-back" data-deactivate="#edit-profile-modal"></div>
+			<form data-ajax="false" id="list-add-form" class="modal-popup">
+				<div class="modal-head">
+					Edit Profile
+				</div>
+				<div class="modal-body">
+					<div class="form-control">
+						<label class="form-label" for="edit-username">Username</label>
+						<input class="form-input" type="text" placeholder="Username" data-role="none" id="edit-username">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-password">Password</label>
+						<input class="form-input" type="text" placeholder="Password" data-role="none" id="edit-password">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-fav-store">Favorite store</label>
+						<input class="form-input" type="text" placeholder="Favorite store" data-role="none" id="edit-fav-store">
+					</div>
+				</div>
+				<div class="modal-foot"><a href="#profile-page">
+					<button type="button" class="form-button" data-role="none">Submit</button></a>
+				</div>
+			</form>
+	</section>
+
+
+<script type="text/template" id="footer-nav-template">
+	<ul>
+		<li><a href="#recent-page">
+			<div class="nav-icon"><span class="iconify" data-inline="false" data-icon="mdi:map-marker" style="font-size: 27px;"></span></div>
+			<div class="nav-title">Recent</div>
+		</a></li>
+		<li><a href="#list-page">
+			<div class="nav-icon"><span class="iconify" data-inline="false" data-icon="ic:round-format-list-bulleted" style="font-size: 27px;"></span></div>
+			<div class="nav-title">List</div>
+		</a></li>
+		<li><a href="#profile-page">
+			<div class="nav-icon"><span class="iconify" data-inline="false" data-icon="ant-design:user-outlined" style="font-size: 27px;"></span></div>
+			<div class="nav-title">Profile</div>
+		</a></li>
+	</ul>
+	</script>
+	
+	
+</body>
+</html>
