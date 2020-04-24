@@ -1,4 +1,3 @@
-
 const checkLoginForm = async () => {
 
 	let user = $("#login-username").val();

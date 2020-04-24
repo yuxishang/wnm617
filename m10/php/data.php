@@ -52,6 +52,8 @@ function makeQuery($c,$ps,$st,$p) {
 
 function makeStatement($c,$t,$p) {
 	switch($t) {
+		case "check_login":
+			return makeQuery($c,"SELECT id FROM `track_users` WHERE username = ? AND password = md5(?)","ss",$p);
 		case "users_all":
 			return makeQuery($c,"SELECT * FROM `track_users`","",$p);
 		case "shops_all":
@@ -68,7 +70,7 @@ function makeStatement($c,$t,$p) {
 			return makeQuery($c,"SELECT * FROM `track_shops` WHERE uid = ?","i",$p);
 
 		case "locations_from_shops":
-			return makeQuery($c,"SELECT * FROM `track_locations` WHERE aid = ?","i",$p);
+			return makeQuery($c,"SELECT * FROM `track_locations` WHERE sid = ?","i",$p);
 
 		case "user_by_id":
 			return makeQuery($c,"SELECT * FROM `track_users` WHERE id = ?","i",$p);
@@ -76,10 +78,6 @@ function makeStatement($c,$t,$p) {
 			return makeQuery($c,"SELECT * FROM `track_shops` WHERE id = ?","i",$p);
 		case "location_by_id":
 			return makeQuery($c,"SELECT * FROM `track_locations` WHERE id = ?","i",$p);
-	
-		case "check_login":
-			return makeQuery($c,"SELECT id FROM `track_users` WHERE username = ? AND password = md5(?)","ss",$p);
-
 	}
 }
 

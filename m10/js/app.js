@@ -4,35 +4,34 @@ $(()=>{
 
 	// Event Delegation
 	$(document)
-	
+
+
 	// ROUTING
 	.on("pagecontainerbeforeshow",function(e,ui){
 		console.log(ui.toPage[0].id)
-		switch(ui.toPage[0].id){
+		switch(ui.toPage[0].id) {
 			case "recent-page":
-				showRecentPage();
-			break;
+				// some code
+				break;
 			case "list-page":
 				showListPage();
 				break;
-			case "sign-up page":
-			//somecode
-			break;
+			case "shop-profile-page":
+				showShopPage();
+				break;
 			case "profile-page":
 				showUserPage();
-			break;
-			case"shop-profile page":
-				showShopPage();
-			break;
+				break;
 		}
-		
 	})
 
-	/* FORMS */
+
+/* FORMS */
 	.on("submit","#login-form",function(e){
 		e.preventDefault();
 		checkLoginForm();
 	})
+
 
 
 
@@ -42,14 +41,12 @@ $(()=>{
 		checkUserId();
 	})
 
-	.on("click",".animal-jump",function(e){
+		.on("click",".shop-jump",function(e){
 		if($(this).data("id")===undefined) {
 			throw("No id defined on this element");
 		}
-		sessionStorage.animalId = $(this).data("id");
+		sessionStorage.shopId = $(this).data("id");
 	})
-
-
 
 
 
@@ -72,14 +69,9 @@ $(()=>{
 		$($(this).data("activateone"))
 			.addClass("active")
 			.siblings().removeClass("active");
-	});
+	})
+	;
 
-
-	$("[data-template]").each(function(){
-		let template_id = $(this).data("template");
-		let template_str = $(template_id).html();
-		$(this).html(template_str);
-	});
 
 
 

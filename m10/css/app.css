@@ -350,29 +350,29 @@ height:var(--header-height);
 
 
 
-.animallist {
+.shoplist {
     list-style-type:none;
     margin:0;
     padding:0 0 6em;
 
 }
-.animallist-item {
+.shoplist-item {
     margin: 1.5em;
     padding: 0.5em;
     background-color: white;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.animallist-item a {
+.shoplist-item a {
     border-radius:0.8em;
     overflow:hidden;
 }
-.animallist-image img {
+.shoplist-image img {
     width: 5em;
     height: 5em;
     vertical-align: middle;
 }
-.animallist-title {
+.shoplist-title {
     display:flex;
     align-items:center;
     justify-content:center;
@@ -574,13 +574,13 @@ color: #000000;
 	position: absolute;
 width: 265px;
 height: 100px;
-left: 126px;
-top: 220px;
+left: 115px;
+top: 300px;
 
 font-family: Raleway;
-font-style: normal;
+font-style: bold;
 font-weight: bold;
-font-size: 36px;
+font-size: 50px;
 line-height: 42px;
 display: flex;
 align-items: center;
@@ -711,6 +711,16 @@ border-radius: 500px;
 background: #F5D6D1;
     -webkit-appearance: none;
 }
+#e85_5 {
+position: absolute;
+width: 419px;
+height: 419px;
+left: 0px;
+top: -210px;
+border-radius: 500px;
+background: #f0b22E
+    -webkit-appearance: none;
+}
 .storelist{
     position: absolute;
 width: 345px;
@@ -734,11 +744,14 @@ height: 30px;
 left: 327px;
 top: 5px;
 }
+
+.logout{
+    margin-right:10px;
+}
 .profile_head {
     position: absolute;
     width: 148px;
     height: 75px;
-    left: 160px;
     top: 260px;
     font-family: Raleway;
     font-style: normal;
@@ -749,12 +762,12 @@ top: 5px;
     align-items: center;
     text-align: center;
     color: #000000;
+    text-align: center;
 }
 .profile_type {
     position: absolute;
     width: 148px;
     height: 75px;
-    left: 165px;
     top: 300px;
     font-family: Raleway;
     font-style: normal;
@@ -765,12 +778,12 @@ top: 5px;
     align-items: center;
     text-align: center;
     color: #B4AAAA;
+    text-align: center;
 }
 .times {
     position: absolute;
     width: 77px;
     height: 39px;
-    left: 165px;
     top: 335px;
     font-family: Raleway;
     font-style: normal;
@@ -781,6 +794,7 @@ top: 5px;
     align-items: center;
     text-align: center;
     color: #000000;
+    text-align: center;
 }
 .editicon{
     position: absolute;
@@ -873,7 +887,7 @@ color: #4C4949;
     position: absolute;
     width: 148px;
     height: 75px;
-    left: 135px;
+    left: 115px;
     top: 260px;
     font-family: Raleway;
     font-style: normal;
@@ -959,9 +973,7 @@ color: #4C4949;
     line-height: 21px;
     color: #4C4949;
 }
-.logout{
-    margin-right:10px;
-}
+
 #list-page header {
     position: relative;
     z-index: 2;

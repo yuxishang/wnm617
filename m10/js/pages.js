@@ -2,14 +2,14 @@
 // ASYNC
 const showListPage = async () => {
 	let d = await query({
-		type:'animals_from_user',
+		type:'shops_from_user',
 		params:[sessionStorage.userId]
 	});
 
 	console.log(d);
 
-	$("#list-page .animallist")
-		.html(makesShopList(d.result));
+	$("#list-page .shoplist")
+		.html(makeShopList(d.result));
 }
 
 
@@ -23,21 +23,22 @@ const showUserPage = async () => {
 
 	$("#profile-page .profile-content")
 		.html(makeUserProfile(d.result));
+
 }
 
-
-const showAnimalPage = async () => {
-	if(sessionStorage.animalId===undefined) {
-		throw("No animal id defined");
+const showShopPage = async () => {
+	if(sessionStorage.shopId===undefined) {
+		throw("No shop id defined");
 	}
 
 	let d = await query({
-		type:'animal_by_id',
-		params:[sessionStorage.animalId]
+		type:'shop_by_id',
+		params:[sessionStorage.shopId]
 	});
 
 	console.log(d);
 
-	$("#animal-profile-page .profile-content")
-		.html(makeAnimalProfile(d.result));
-}
+	$("#shop-profile-page .profile-body")
+		.html(makeShopProfile(d.result));
+
+} 
