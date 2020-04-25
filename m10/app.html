@@ -15,10 +15,13 @@
 	<script src="js/templates.js"></script>
 	<script src="js/login.js"></script>
 	<script src="js/pages.js"></script>
+	<script src="js/map.js"></script>
 	
 	<script src="js/app.js"></script>
 	
 	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDvBicu3djzHOZQFoHQ8_BqIu7_GDsUwE"
+    async defer></script>
 	<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
 </head>
 <body>
@@ -90,25 +93,7 @@
 			<h1 class="">Recent Locations</h1>
 		</header>
 		<div data-role="main">
-			
-			<div class="marker" data-toggle="#recent-page .basin">
-				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #CAD8A2; font-size: 40px;"></span>
-			</div>
-
-				<div class="marker_1" data-toggle="#recent-page .basin">
-				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #F0B33E; font-size: 40px;"></span>
-			</div>
-
-				<div class="marker_2" data-toggle="#recent-page .basin">
-				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #F5D6D1; font-size: 40px;"></span>
-			</div>
-				<div class="marker_3" data-toggle="#recent-page .basin">
-				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #9ABFD5; font-size: 40px;"></span>
-			</div>
-				<div class="marker_4" data-toggle="#recent-page .basin">
-				<span class="iconify" data-inline="false" data-icon="mdi:map-marker"style="color: #E1C6A0; font-size: 40px;"></span>
-			</div>
-
+			<div class="map"></div>
 			<div class="nav-air circle bottom right">
 				<a href="#" data-activate="#map-add-modal">+</a>
 			</div>
@@ -221,6 +206,9 @@
 	    <div data-role="main"><div class="profile-body">
 		</div>
 		</div>
+		<!-- <div class="profile-map">
+				<div class="map"></div>
+			</div> -->
 		<footer data-role="footer" data-template="#footer-nav-template"></footer>
 
 

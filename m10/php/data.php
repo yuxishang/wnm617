@@ -78,6 +78,22 @@ function makeStatement($c,$t,$p) {
 			return makeQuery($c,"SELECT * FROM `track_shops` WHERE id = ?","i",$p);
 		case "location_by_id":
 			return makeQuery($c,"SELECT * FROM `track_locations` WHERE id = ?","i",$p);
+
+		case "recent_shop_locations":
+			return makeQuery($c,"SELECT
+				s.*, l.*
+				FROM `track_shops` AS s
+				LEFT JOIN (
+					SELECT sid,lat,lng,icon
+					FROM `track_locations`
+					ORDER BY `date_create` DESC
+				) AS l
+				ON s.id = l.sid
+				WHERE s.uid = ?
+				GROUP BY l.sid
+				","i",$p);
+
+
 	}
 }
 

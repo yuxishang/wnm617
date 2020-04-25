@@ -522,10 +522,6 @@ height:var(--header-height);
 
 
 
-#recent-page [data-role='main'] {
-    background-image: url(../img/map.png);
-    background-size: auto;
-}
 #signup-page [data-role='main'] {
     display:flex;
     flex-direction:column;
@@ -1014,4 +1010,16 @@ svg {
     width: 30%;
     margin-top: -100px;
     margin-left: 30px;
+}
+
+.map {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.profile-map {
+    height:30vh;
+    position:relative;
 }

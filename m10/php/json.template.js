@@ -59,10 +59,10 @@
 
 // LOCATIONS TEMPLATE
 [
-  '{{repeat(10)}}',
+  '{{repeat(400)}}',
   {
     id: '{{index(1)}}',
-    aid: '{{integer(1,50)}}',
+    sid: '{{integer(1,50)}}',
     lat: '{{floating(37.484450, 37.296682)}}',
     lng: '{{floating(-122.111148, -121.956709)}}',
     
