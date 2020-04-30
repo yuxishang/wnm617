@@ -40,7 +40,7 @@ const callShopProfile = (id,target) => {
 }
 const callShopMap = (id,target) => {
 	query({
-		type:'locations_from_shop',
+		type:'locations_from_shops',
 		params:[id]
 	}).then(async d=>{
 		let map_el = await makeMap(target);
@@ -57,25 +57,33 @@ const showShopPage = async () => {
 		throw("No shop id defined");
 	}
 
-	// callShopProfile(
-	// 	sessionStorage.shopId,
-	// 	"#shop-profile-page .profile-body"
-	// );
-	// callShopMap(
-	// 	sessionStorage.shopId,
-	// 	"#shop-profile-page .map"
-	// );
-	 query({
-		type:'shop_by_id',
-		params:[sessionStorage.shopId]
-	}).then(d=>{
+	callShopProfile(
+ 	sessionStorage.shopId,
+		"#shop-profile-page .profile-body"
+	 );
+	callShopMap(
+		sessionStorage.shopId,
+	 	"#shop-profile-page .map"
+ );
+// 	 query({
+// 		type:'shop_by_id',
+// 		params:[sessionStorage.shopId]
+// 	}).then(d=>{
+// 		console.log(d);
 
-	console.log(d);
-	$("#shop-profile-page .profile-body")
-	.html(makeShopProfile(d.result));
-});
+// 	$("#shop-profile-page .profile-body")
+// 	.html(makeShopProfile(d.result));
+// });
+    
 
-	let map_el = makeMap("#shop-profile-page .map");
+//   query({
+//    	type:'locations_from_shops',
+//    	params:[sessionStorage.shopId]
+//    }).then(d=>{
+// 		 let map_el = makeMap("#shop-profile-page .map");
+
+// 		 makeMarkers(map_el,d.result);
+// 		 });
 
 } 
 const showRecentPage = async () => {
