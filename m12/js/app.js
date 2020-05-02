@@ -19,6 +19,9 @@ $(()=>{
 			case "shop-profile-page":
 				showShopPage();
 				break;
+			case "add-location-page":
+				showAddLocationPage();
+				break;
 			case "profile-page":
 				showUserPage();
 				break;
@@ -52,11 +55,13 @@ $(()=>{
 			$.mobile.navigate("#login-page");
 		})
 	})
-.on("submit","#list-add-form",function(e){
+	
+	.on("submit","#list-add-form",function(e){
 		e.preventDefault();
 		query({
 			type:'insert_shop',
 			params:[
+				sessionStorage.userId,
 				$("#list-add-name").val(),
 				$("#list-add-type").val(),
 				$("#list-add-open-time").val(),
@@ -77,12 +82,23 @@ $(()=>{
 		checkUserId();
 	})
 
-		.on("click",".shop-jump",function(e){
+	.on("click",".shop-jump",function(e){
 		if($(this).data("id")===undefined) {
 			throw("No id defined on this element");
 		}
 		sessionStorage.shopId = $(this).data("id");
 	})
+
+	.on("click",".nav-tabs a",function(e) {
+		let id = $(this).parent().index();
+		$(this).parent().addClass("active")
+			.siblings().removeClass("active");
+
+		$(this).parent().parent().parent().next().children()
+			.eq(id).addClass("active")
+			.siblings().removeClass("active")
+	})
+
 
 
 

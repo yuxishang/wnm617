@@ -28,7 +28,9 @@ function makeQuery($c,$ps,$st,$p) {
 			@$statement->bind_param($st, ...$p) &&
 			@$statement->execute()
 		) {
-			$r = fetchAll($statement->get_result());
+			$r = substr($ps,0,6)=="SELECT" ?
+				fetchAll($statement->get_result()):
+				[];
 			return [
 				"params"=>$p,
 				"qry"=>$ps,
@@ -93,13 +95,14 @@ function makeStatement($c,$t,$p) {
 				GROUP BY l.sid
 				","i",$p);
 
+		
 		// INSERT STATEMENTS
 
 		case "insert_user":
 			// Check for existing username or email
 			$r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email`=?","ss",[$p[0],$p[1]]);
 			if(count($r['result'])) return ["error"=>"Username or Email exists"];
-			
+
 			$r = makeQuery($c,"INSERT INTO
 				`track_users`
 				(`username`,`email`,`password`,`date_create`)
@@ -111,23 +114,55 @@ function makeStatement($c,$t,$p) {
 		case "insert_shop":
 			$r = makeQuery($c,"INSERT INTO
 				`track_shops`
-				
-  				(`uid`,`name`,`type`,`open_time`,`close_time`,`description`,`date_create` )
+				(`uid`,`name`,`type`,`open_time`,`close_time`,`date_create`)
 				VALUES
-				(?,?,?,?,?,?,NOW())
-				","isssss",$p);
+				(?,?,?,?,?,NOW())
+				","issss",$p);
 			return ["result"=>"success"];
+
 		case "insert_location":
 			$r = makeQuery($c,"INSERT INTO
 				`track_locations`
-				(`sid`,`lat`,`lng`,`description`,`date_create`)
+				(`sid`,`lat`,`lng`,`description`,`icon`,`date_create`)
 				VALUES
-				(?,?,?,?,NOW())
+				(?,?,?,?,'https://via.placeholder.com/100/888/fff/?text=ICON',NOW())
 				","idds",$p);
 			return ["result"=>"success"];
 
 
 
+		// UPDATE STATEMENTS
+
+		case "edit_user":
+			$r = makeQuery($c,"UPDATE
+				`track_users`
+				SET
+				`name`=?,
+				`email`=?
+				WHERE id=?
+				","ssi",$p);
+			return ["result"=>"success"];
+
+		case "edit_user_password":
+			$r = makeQuery($c,"UPDATE
+				`track_users`
+				SET
+				`password`=?
+				WHERE id=?
+				","si",$p);
+			return ["result"=>"success"];
+
+		case "edit_shop":
+			$r = makeQuery($c,"UPDATE
+				`track_shops`
+				SET
+				`name`=?,
+				`type`=?,
+				`breed`=?,
+				`description`=?
+				WHERE id=?
+				","ssssi",$p);
+			return ["result"=>"success"];
 
 
 	}

@@ -104,6 +104,9 @@
 				<a href="#recent-add-choice-page" data-activate="#map-add-modal">+</a>
 			</div>
 		</div>
+		<div class="basin">
+			Some content
+		</div>
 		<footer data-role="footer" data-template="#footer-nav-template"></footer>
 	</section>
 
@@ -234,7 +237,7 @@
 				<div class="modal-body">
 					<div class="form-control">
 						<label class="form-label" for="list-add-name">Name</label>
-						<input class="form-input" type="text" placeholder="Pop up store Name" data-role="none" id="list-add-name">
+						<input class="form-input" type="text" placeholder="Pop up Store Name" data-role="none" id="list-add-name">
 					</div>
 					<div class="form-control">
 						<label class="form-label" for="list-add-type">Type</label>
@@ -243,6 +246,7 @@
 							<option>Food</option>
 							<option>Art</option>
 							<option>Architecture</option>
+							<option>Others</option>
 						</select>
 					</div>
 					<div class="form-control">
@@ -255,7 +259,7 @@
 					</div>
 				</div>
 				<div class="modal-foot">
-					<button type="button" class="form-button" data-role="none" data-deactivate="#list-add-modal">Submit</button>
+					<button type="submit" class="form-button" data-role="none" data-deactivate="#list-add-modal">Submit</button>
 				</div>
 			</form>
 		</div>
@@ -275,7 +279,39 @@
 			</ul>
 		</header> -->
 	
-	<header data-role="header">
+<!-- 	<header data-role="header">
+
+			<ul>
+				<li class="flex-none">
+					<a href="#recent-page" class="backarrowstoreprofile"><span class="iconify " data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				</li>
+				<li class="flex-stretch"></li>
+				<li class="flex-none heart">
+					<a href="#"><span class="iconify" data-inline="false" data-icon="ant-design:delete-outlined" style="font-size: 30px;"></span></a>
+				</li>
+				<li class="flex-none">
+			<a href="#" data-activate="#list-edit-modal" class="editicon">
+       		 <span class="iconify" data-inline="false" data-icon="bytesize:edit" style="font-size: 30px;"></span></a>
+			</li>
+			</ul>
+			</ul>
+		</header>
+	    <div data-role="main">
+	    	<div class="profile-body">
+		</div>
+		</div>
+		 <div class="profile-map active">
+				<div class="map"></div>
+			</div>
+			<nav class="profile-nav nav-tabs">
+				<ul>
+					<li class="active"><a href="#">Locations</a></li>
+					<li><a href="#">Description</a></li>
+				</ul>
+			</nav> 
+		<footer data-role="footer" data-template="#footer-nav-template"></footer> -->
+
+		<header data-role="header">
 
 			<ul>
 				<li class="flex-none">
@@ -297,8 +333,13 @@
 		</div>
 		 <div class="profile-map">
 				<div class="map"></div>
+				<div class="nav-air circle bottom right">
+						<a href="#add-location-page">+</a>
+					</div>
 			</div> 
 		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+
+</section>
 
 </section>
 

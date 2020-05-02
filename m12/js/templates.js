@@ -30,7 +30,7 @@ const makeUserProfile = templater(o=>`
 
 const makeShopProfile = templater(o=>`
 
-    <img src="${o.img}" style="position: absolute;width: 140px;height: 140px;left: 118px;top: 30px;border-radius: 50%;">
+   <img src="${o.img}" style="position: absolute;width: 140px;height: 140px;left: 118px;top: 30px;border-radius: 50%;">
      <h1 class="profile_head">${o.name}</h1>
     <p class="profile_type">${o.type}</p>
     <p class="times">${o.times}</p> 
@@ -44,6 +44,20 @@ const makeShopProfile = templater(o=>`
 ${o.open_time}-${o.close_time}</p>
 
     
+    
 
 
+`);
+
+
+
+const makeRecentWindow = templater(o=>`
+            <a href="#shop-profile-page" class=" shop-jump" data-id="${o.id}">
+            <div class="basinname">${o.name}</div>
+            <div class="basintype">${o.type}</div>
+            <div class="basindetails">Opening Hours<br>
+            <div class="basinopeninghours">March 24th-April 14th<br><br>
+            Mon-Fri ${o.open_time}-${o.close_time}<br>Sat-Sun ${o.open_time}-${o.close_time} </div></div>
+            <img src="img/popupstore1.png" style="width: 30%;margin-top: -100px; margin-left: 30px;">
+            </a>
 `);

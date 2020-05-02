@@ -292,6 +292,39 @@ height:var(--header-height);
     transform: translate(-50%,-50%);
 }
 
+/* NAV */
+.nav-tabs ul,
+.nav ul {
+    list-style-type:none;
+    margin-top:0;
+    margin-bottom:0;
+    padding-left:0;
+}
+    .nav-tabs a,
+    .nav a {
+        display:block;
+    }
+    .nav-tabs ul {
+        display:flex;
+    }
+    .nav-tabs li {
+        flex: 1 1 auto;
+        text-align:center;
+    }
+    .nav-tabs a {
+        line-height:var(--header-height);
+    }
+
+
+
+
+
+
+.marker img{
+    pointer-events:none;
+    width:4rem;
+    height:4rem;
+}
 
 /* MODAL */
 .modal {
@@ -432,6 +465,7 @@ height:var(--header-height);
     top: 50%;
     left: 50%;
     transform: translate(-50%, 150%);
+    pointer-events:none;
 }
 
 
@@ -1058,3 +1092,33 @@ svg {
   font-size: 3em;
   text-align: center;
 }
+
+/* NAV */
+.nav-tabs ul,
+.nav ul {
+    list-style-type:none;
+    margin-top:0;
+    margin-bottom:0;
+    padding-left:0;
+}
+    .nav-tabs a,
+    .nav a {
+        display:block;
+    }
+    .nav-tabs ul {
+        display:flex;
+    }
+    .nav-tabs li {
+        flex: 1 1 auto;
+        text-align:center;
+    }
+    .nav-tabs a {
+        line-height:var(--header-height);
+    }
+#shop-profile-page .nav-tabs .active a {
+    background-color:#fed27d;
+}
+
+
+
+
