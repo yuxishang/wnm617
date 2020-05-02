@@ -99,16 +99,45 @@ const showRecentPage = async () => {
 const showAddLocationPage = async () => {
 	let map_el = await makeMap("#add-location-page .map");
 
+	let m = false;
+
 	map_el.data("map").addListener("click",function(e){
 		let pos = {
 			lat:e.latLng.lat(),
 			lng:e.latLng.lng()
 		};
-		let m = new google.maps.Marker({
+
+		if(m!=false) m.setMap(null);
+
+		$("#add-location-lat").val(pos.lat);
+		$("#add-location-lng").val(pos.lng);
+
+		m = new google.maps.Marker({
 			position: pos,
 			map: map_el.data("map")
 		});
 	});
 
 	setMapBounds(map_el.data("map"),[]);
+}
+
+
+const showEditUserPage = async () => {
+	let d = await query({
+		type:'user_by_id',
+		params:[sessionStorage.userId]
+	});
+
+	$("#edit-user-page .edit-form")
+		.html(makeEditUserForm(d.result[0]))
+}
+
+const showEditStorePage = async () => {
+	let d = await query({
+		type:'shop_by_id',
+		params:[sessionStorage.shopId]
+	});
+
+	$("#edit-store-page .edit-form")
+		.html(makeEditStoreForm(d.result[0]))
 }

@@ -428,6 +428,11 @@ height:var(--header-height);
     height: 5em;
     vertical-align: middle;
 }
+.shoplist-image  {
+    width: 5em;
+    height: 5em;
+    background-color: var(--color-neutral-light)
+}
 .shoplist-title {
     display:flex;
     align-items:center;
@@ -530,7 +535,6 @@ height:var(--header-height);
 .nav-air.left {
     left: 1em;
 }
-
 
 
 
@@ -1119,6 +1123,15 @@ svg {
     background-color:#fed27d;
 }
 
+.edit-form {
+    width: 360px;
+    height: 400px;
+    padding: 80px 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
 
 
 

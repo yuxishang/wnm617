@@ -92,7 +92,6 @@ const setMapBounds = (map, locs) => {
 
 
 
-
 const mapStyles = [
     {
         "featureType": "all",

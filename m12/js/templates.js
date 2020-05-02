@@ -10,7 +10,7 @@ const makeShopList = templater(o=>`
 
 
 const makeUserProfile = templater(o=>`
-        <img src="${o.img}" style="position: absolute;width: 140px;height: 140px;left: 118px;top: 100px;border-radius: 50%;"></div> 
+        <img src="${o.img}" style="position: absolute;width: 140px;height: 140px;left: 118px;top: 100px;border-radius: 50%;background-color:var(--color-neutral-light);"></div> 
         <h1 class="user_head">${o.name}</h1>
 
         <a href="#shop-edit-page" data-activate="#list-edit-modal">
@@ -30,7 +30,7 @@ const makeUserProfile = templater(o=>`
 
 const makeShopProfile = templater(o=>`
 
-   <img src="${o.img}" style="position: absolute;width: 140px;height: 140px;left: 118px;top: 30px;border-radius: 50%;">
+   <img src="${o.img}" style="position: absolute;width: 140px;height: 140px;left: 118px;top: 30px;border-radius: 50%; background-color:var(--color-neutral-light);">
      <h1 class="profile_head">${o.name}</h1>
     <p class="profile_type">${o.type}</p>
     <p class="times">${o.times}</p> 
@@ -49,8 +49,6 @@ ${o.open_time}-${o.close_time}</p>
 
 `);
 
-
-
 const makeRecentWindow = templater(o=>`
             <a href="#shop-profile-page" class=" shop-jump" data-id="${o.id}">
             <div class="basinname">${o.name}</div>
@@ -61,3 +59,60 @@ const makeRecentWindow = templater(o=>`
             <img src="img/popupstore1.png" style="width: 30%;margin-top: -100px; margin-left: 30px;">
             </a>
 `);
+
+const makeEditUserForm = (o) => {
+return `
+<form id="edit-user-form">
+    <div class="form-control">
+                        <label class="form-label" for="edit-fullname">Full name</label>
+                        <input class="form-input" type="text" placeholder="Full name" data-role="none" id="edit-fullname" value="${o.name}">
+                    </div
+                    <div class="form-control">
+                        <label class="form-label" for="edit-Email">Email</label>
+                        <input class="form-input" type="text" placeholder="Email" data-role="none" id="edit-Email" value="${o.email}">
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="edit-fav-store">Favorite store</label>
+                        <input class="form-input" type="text" placeholder="Favorite store" data-role="none" id="edit-fav-store" value="${o.favoritestore}">
+                    </div>
+</form>
+`;
+}
+
+const makeEditTypeSelect = (type) => {
+    let options = ["Art","Architecture","Food","Fashion"];
+    return options.reduce((r,o)=>{
+        return r+`<option value="${o}" ${type==o?"selected":""}>${o.toUpperCase()}</option>`;
+    },'');
+}
+
+const makeEditStoreForm = (o) => {
+return `
+<form id="edit-store-form">
+        <div class="form-control">
+                        <label class="form-label" for="edit-shop-name">Name</label>
+                        <input class="form-input" type="text" placeholder="Pop up store name" data-role="none" id="edit-shop-name" value="${o.name}">
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="edit-shop-type">Type</label>
+                        <select class="form-button" id="edit-shop-type" data-role="none">
+                            ${makeEditTypeSelect(o.type)}
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="edit-shop-open-time">Open Time</label>
+                        <input class="form-input" type="text" placeholder="Open Time" data-role="none" id="edit-shop-open-time" value="${o.open_time}">
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="edit-shop-close-time">Close Time</label>
+                        <input class="form-input" type="text" placeholder="Close Time" data-role="none" id="edit-shop-close-time" value="${o.close_time}">
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="edit-shop-description">Description</label>
+                        <textarea class="form-input" placeholder="Type your Description" data-role="none" id="edit-shop-description">${o.description}</textarea>
+                    </div>   
+</form>
+`;
+}
+
+

@@ -138,9 +138,10 @@ function makeStatement($c,$t,$p) {
 				`track_users`
 				SET
 				`name`=?,
-				`email`=?
+				`email`=?,
+				`favoritestore`=?
 				WHERE id=?
-				","ssi",$p);
+				","sssi",$p);
 			return ["result"=>"success"];
 
 		case "edit_user_password":
@@ -158,10 +159,11 @@ function makeStatement($c,$t,$p) {
 				SET
 				`name`=?,
 				`type`=?,
-				`breed`=?,
+				`open_time`=?,
+				`close_time`=?,
 				`description`=?
 				WHERE id=?
-				","ssssi",$p);
+				","sssssi",$p);
 			return ["result"=>"success"];
 
 

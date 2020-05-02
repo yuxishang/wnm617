@@ -25,6 +25,13 @@ $(()=>{
 			case "profile-page":
 				showUserPage();
 				break;
+			case "edit-user-page":
+				showEditUserPage();
+				break;
+			case "edit-store-page":
+				showEditStorePage();
+				break;
+		 	
 		}
 	})
 
@@ -77,6 +84,20 @@ $(()=>{
 
 
 	/* CLICKS */
+
+	.on("click",".js-addlocation",function(e) {
+		query({
+			type:'insert_location',
+			params:[
+				sessionStorage.shopId,
+				$("#add-location-lat").val(),
+				$("#add-location-lng").val(),
+			]
+		}).then(d=>{
+			if(d.error) throw d.error;
+			// showListPage();
+		})
+	})
 	.on("click",".js-logout",function(e) {
 		sessionStorage.removeItem("userId")
 		checkUserId();
@@ -99,7 +120,36 @@ $(()=>{
 			.siblings().removeClass("active")
 	})
 
-
+	.on("click",".js-edituser",function(e) {
+		query({
+			type:'edit_user',
+			params:[
+				$("#edit-fullname").val(),
+				$("#edit-Email").val(),
+				$("#edit-fav-store").val(),
+				sessionStorage.userId
+			]
+		}).then(d=>{
+			if(d.error) throw d.error;
+			// showListPage();
+		})
+	})
+	.on("click",".js-editshop",function(e) {
+		query({
+			type:'edit_shop',
+			params:[
+				$("#edit-shop-name").val(),
+				$("#edit-shop-type").val(),
+				$("#edit-shop-open-time").val(),
+				$("#edit-shop-close-time").val(),
+				$("#edit-shop-description").val(),
+				sessionStorage.shopId
+			]
+		}).then(d=>{
+			if(d.error) throw d.error;
+			// showListPage();
+		})
+	})
 
 
 
