@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pop Up Store Tracker</title>
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="lib/js/jquery-2.2.4.min.js"></script>
+
+	<script src="js/functions.js"></script>
+	<script src="js/templates.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/pages.js"></script>
+	<script src="js/map.js"></script>
+	
+	<script src="js/app.js"></script>
+	
+	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDvBicu3djzHOZQFoHQ8_BqIu7_GDsUwE"
+    async defer></script>
+	<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+</head>
+<body>
+<!-- login-page -->
+	<section data-role="page" id="login-page">
+			<div data-role="main" class="display-flex flex-vertical scrollable">
+				<img src="img/loginpage.png" style="height: 227px;width: 228px;margin-left: 77px;margin-top: 57px">
+				<p class="loginladym">UPOP</p>
+				<div class="flex-stretch"></div>
+				<div class="flex-none">
+					<form id="login-form" data-ajax="false" style="padding:1em">
+						<div class="form-control">
+							<label class="form-label" for="login-username"></label>
+							<label class="hotdog1 display-flex">
+								<input class="flex-stretch" type="username" placeholder="Type your Username" data-role="none" id="login-username">
+								<span class="iconify" data-inline="false" data-icon="ant-design:user-outlined" style="font-size: 30px;"></span>
+							</label>
+						</div>
+						<div class="form-control">
+							<label class="form-label" for="login-password"></label>
+							<label class="hotdog2 display-flex">
+								<input class="flex-stretch " type="password" placeholder="Type your Password" data-role="none" id="login-password">
+								<span class="iconify" data-inline="false" data-icon="bx:bx-lock-alt" style="font-size: 30px;"></span>
+							</label>
+						</div>
+						<div class="form-control hotdog3 ">
+							<input type="submit" class="form-button" value="Login" data-role="none" />
+						</div>
+						<div class="form-control text-center" style="margin:1em 0">
+							<a href="#signup-page"><small>JOIN NOW</small></a>
+						</div>
+					</form>
+				</div>
+			</div>
+	</section>
+<!-- signup-page -->
+	<section data-role="page" id="signup-page">
+		<div data-role="main">
+			<h1 class="signuptitle">Create your personal UPOP profile.</h1>
+			<form id="signup-form">
+				<div class="form-control">
+					<label class="form-label" for="signup-username">Username</label>
+					<input class="form-input" type="text" placeholder="Type your Username" data-role="none" id="signup-username">
+				</div>
+				<div class="form-control">
+					<label class="form-label" for="signup-email">Email</label>
+					<input class="form-input" type="email" placeholder="Type your email" data-role="none" id="signup-email">
+				</div>
+				<div class="form-control">
+					<label class="form-label" for="signup-password">Password</label>
+					<input class="form-input" type="password" placeholder="Type your Password" data-role="none" id="signup-password">
+				</div>
+				<div class="form-control">
+					<label class="form-label" for="signup-password2">Password Again</label>
+					<input class="form-input" type="password" placeholder="Type your Password" data-role="none" id="signup-password2">
+				</div>
+				<div class="form-control">
+					<input type="submit" class="form-button" value="Signup" data-role="none">
+				</div>
+				<div class="form-control text-center" style="margin:1em 0">
+					<a href="#login-page"><small>Login</small></a>
+				</div>
+			</form>
+		</div>
+	</section>
+<!-- recent-page -->
+	<section data-role="page" id="recent-page">
+		<!-- <header data-role="header">
+			<h1 class="">The places you have visited recently</h1>
+		</header> -->
+		 <!-- 
+			<form class="hotdog-search" id="map-search" data-ajax="false">
+				<input type="search" class="search" placeholder="Search Shops" data-role="none">
+			</form> -->
+
+		<div data-role="main">
+			<div class="map"></div>
+			<div class="nav-air circle bottom right">
+				<a href="#add-shop-page" data-activate="#map-add-modal">+</a>
+			</div>
+		</div>
+		<div class="basin">
+			Some content
+		</div>
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+	</section>
+<!-- recent-add-choice-page -->
+	<section data-role="page" id="recent-add-choice-page">
+		<header data-role="header">
+			<h1>Choose Shop</h1>
+			<ul>
+				<li class="flex-none">
+					<a href="#" data-rel="back"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				</li>
+				<li class="flex-stretch">
+				</li>
+				<li class="flex-none">
+					<a href="#add-location-page"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;" data-rotate="180deg"></span></a>  
+				</li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<a href="#add-shop-page">Add New Shop</a>
+			<br>
+			Or
+			<br>
+			<select name="" id="" class="form-input">
+				<option value="">Shop 1</option>
+				<option value="">Shop 2</option>
+				<option value="">Shop 3</option>
+				<option value="">Shop 4</option>
+			</select>
+		</div>
+	</section>
+<!-- add-shop-page -->
+	<section data-role="page" id="add-shop-page">
+		<header data-role="header">
+			<h1>Add New Shop</h1>
+			<ul>
+				<li class="flex-none">
+					<a href="#" data-rel="back"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				</li>
+				<li class="flex-stretch"></li>
+				<li class="flex-none">
+					<a href="#add-location-page"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;" data-rotate="180deg"></span></a>
+				</li>
+			</ul>
+		</header>
+		<div class="flex-container">
+		<li class="flex-item"><img src="img/food.png" style="width:80%;"></li>
+		<li class="flex-item"><img src="img/art.png" style="width:80%;"></li>
+		<li class="flex-item"><img src="img/architecture.png" style="width:80%;"></li>
+		<li class="flex-item"><img src="img/fashion.png" style="width:80%;"></li>
+	    </div>
+
+		<div data-role="main" class="recent-add-form">
+			<form data-ajax="false" id="recent-add-form">
+					<div class="form-control">
+						<label class="form-label" for="recent-add-name">Name</label>
+						<input class="form-input" type="text" placeholder="Shop Name" data-role="none" id="recent-add-name">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="recent-add-type">Type</label>
+						<select class="form-button" id="recent-add-type" data-role="none">
+							<option value="art">Art</option>
+							<option value="fashion">Fashion</option>
+							<option value="architecture">Architecture</option>
+							<option value="food">Food</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="recent-add-open-time">Open time</label>
+						<input class="form-input" type="text" placeholder="Shop open time" data-role="none" id="recent-add-open-time">
+					</div>
+				<div class="form-control">
+						<label class="form-label" for="recent-add-close-time">Close time</label>
+						<input class="form-input" type="text" placeholder="Shop close time" data-role="none" id="recent-add-close-time">
+					</div>
+				<div class="form-control">
+						<label class="form-label" for="recent-add-description">Description</label>
+						<textarea class="form-input" placeholder="Shop Description" data-role="none" id="recent-add-description"></textarea>
+					</div>	
+			</form>
+		</div>
+	</section>
+
+<!-- add-location-page -->
+	<section data-role="page" id="add-location-page">
+		<header data-role="header">
+			<h1>Add a Location</h1>
+			<ul>
+				<li class="flex-none">
+					<a href="#" data-rel="back"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				</li>
+				<li class="flex-stretch">
+				</li>
+				<li class="flex-none">
+					<a href="#list-page" class="js-addlocation"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;" data-rotate="180deg"></a>
+				</li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<input type="hidden" id="add-location-lat">
+			<input type="hidden" id="add-location-lng">
+			<div class="map"></div>
+		</div>
+	</section>
+
+<!-- list page -->
+	<section data-role="page" id="list-page">
+		<header>
+			<div id="e85_4"></div>
+			<h1 class="listpagetitle">My shops</h1>
+			<a href="#recent-page" class="backarrow"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				
+			<a href="#" data-activate="#list-add-modal" class="addmodal"><span class="iconify" data-inline="false" data-icon="ant-design:plus-circle-outlined"></span></a>
+		</header>
+
+		<div data-role="main">
+			<ul class="shoplist storelist scrollable">
+			</ul>
+		</div>
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+
+		<div class="modal" id="list-add-modal">
+			<div class="modal-back" data-deactivate="#list-add-modal"></div>
+			<form data-ajax="false" id="list-add-form" class="modal-popup">
+				<div class="modal-head">
+					New Pop-up Store
+				</div>
+				<div class="modal-body">
+					<div class="form-control">
+						<label class="form-label" for="list-add-name">Name</label>
+						<input class="form-input" type="text" placeholder="Pop up Store Name" data-role="none" id="list-add-name">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="list-add-type">Type</label>
+						<select class="form-button" id="list-add-type" data-role="none">
+							<option>Fashion </option>
+							<option>Food</option>
+							<option>Art</option>
+							<option>Architecture</option>
+							<option>Others</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="list-add-open-time">Open Time</label>
+						<input class="form-input" type="text" placeholder="Open Time" data-role="none" id="list-add-open-time">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="list-add-close-time">Close Time</label>
+						<input class="form-input" type="text" placeholder="Close Time" data-role="none" id="list-add-close-time">
+					</div>
+				</div>
+				<div class="modal-foot">
+					<button type="submit" class="form-button" data-role="none" data-deactivate="#list-add-modal">Submit</button>
+				</div>
+			</form>
+			</div>
+	</section>
+
+<!-- shop-profile-page -->
+	<section data-role="page" id="shop-profile-page" >
+		<header data-role="header">
+			<ul>
+				<li class="flex-none">
+					<a href="#recent-page" class="backarrowstoreprofile"><span class="iconify " data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				</li>
+				<li class="flex-stretch">
+				</li>
+				<!-- <li class="flex-none heart js-deleteshop">
+					<a href="#" class="js-deleteshop" data-id="${o.id}"><span class="iconify" data-inline="false" data-icon="ant-design:delete-outlined" style="font-size: 30px;"></span></a>
+				</li> --> 
+				<li class="flex-none">
+					<a href="#edit-store-page" class="editicon"><span class="iconify" data-inline="false" data-icon="bytesize:edit" style="font-size: 30px;"></span></a>
+				</li>
+			</ul>
+		</header>
+	    <div data-role="main">
+	    	<div class="profile-body">
+			</div>
+		</div>
+		 <div class="profile-map">
+			<div class="map"></div>
+				<div class="nav-air circle bottom right">
+						<a href="#add-location-page">+</a>
+				</div>
+		</div> 
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+	</section>
+<!-- profile-page -->
+	<section data-role="page" id="profile-page">
+		<div data-role="main">
+		<header data-role="header">
+        	<ul>
+                <li class="flex-none">
+                    <a href="#recent-page" class="backarrowstoreprofile"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+                </li>
+                <li class="flex-stretch">
+                </li>
+                <li class="flex-none">
+                <a href="#" class="js-logout logout"><span class="iconify" data-inline="false" data-icon="ant-design:logout-outlined" style="font-size: 30px; margin-top: 8px"></span></a>
+            	</li>
+                <li class="flex-none">
+                <a href="#edit-user-page" class="editicon"><span class="iconify" data-inline="false" data-icon="bytesize:edit" style="font-size: 30px;"></span></a>
+    			</li>
+        	</ul>
+        </header>
+		<div class="profile-content">
+		</div>
+		</div>
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+	</section>
+<!-- edit-user-page -->
+	<section data-role="page" id="edit-user-page">
+		<header data-role="header">
+			<ul>
+				<li class="flex-none">
+					<a href="#" data-rel="back">Cancel</a>
+				</li>
+				<li class="flex-stretch">
+				</li>
+				<li class="flex-none">
+					<a href="#" data-rel="back" class="js-edituser">Save</a>
+				</li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<h1 class="signuptitle">Edit My Profile</h1>
+			 <div class="edit-form" >
+					<!-- <div class="form-control">
+						<label class="form-label" for="edit-fullname">Full name</label>
+						<input class="form-input" type="text" placeholder="Full name" data-role="none" id="edit-fullname">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-password">Password</label>
+						<input class="form-input" type="text" placeholder="Password" data-role="none" id="edit-password">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-Email">Email</label>
+						<input class="form-input" type="text" placeholder="Email" data-role="none" id="edit-Email">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-fav-store">Favorite store</label>
+						<input class="form-input" type="text" placeholder="Favorite store" data-role="none" id="edit-fav-store">
+					</div> -->
+			</div> 
+		</div>
+	</section>
+	<!-- edit-store-page -->
+	<section data-role="page" id="edit-store-page">
+		<header data-role="header">
+			<ul>
+				<li class="flex-none">
+					<a href="#" data-rel="back">Cancel</a>
+				</li>
+				<li class="flex-stretch">
+				</li>
+				<li class="flex-none">
+					<a href="#" data-rel="back" class="js-editshop">Save</a>
+				</li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<div class="scrollable">
+				<h1 class="signuptitle">Edit My Pop-up Profile
+				</h1>
+				<div class="edit-form">
+					<div class="form-control">
+						<label class="form-label" for="edit-shop-name">Name</label>
+						<input class="form-input" type="text" placeholder="Pop up store name" data-role="none" id="edit-shop-name">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-shop-type">Type</label>
+						<select class="form-button" id="edit-shop-type" data-role="none">
+							<option>Fashion </option>
+							<option>Food</option>
+							<option>Art</option>
+							<option>Architecture</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-shop-open-time">Open Time</label>
+						<input class="form-input" type="text" placeholder="Open Time" data-role="none" id="edit-shop-open-time">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="edit-shop-close-time">Close Time</label>
+						<input class="form-input" type="text" placeholder="Close Time" data-role="none" id="edit-shop-close-time">
+					</div>
+                 	<div class="form-control">
+						<label class="form-label" for="edit-shop-description">Description</label>
+						<textarea class="form-input" placeholder="Type your Description" data-role="none" id="edit-shop-description">Minim laboris et reprehenderit esse Lorem ullamco veniam ut excepteur qui Lorem labore. Consectetur nostrud ex veniam sunt voluptate aliqua mollit quis cupidatat anim qui tempor Lorem magna. Aute non aliqua mollit laborum consectetur. Laboris irure occaecat exercitation deserunt.</textarea>
+					</div>   
+				</div>
+			</div>
+		</div>
+	</section>
+
+		<section data-role="page" id="edit-upload-page">
+		<header data-role="header">
+			<h1>Upload Image</h1>
+			<ul>
+				<li class="flex-none">
+					<a href="#" data-rel="back"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;"></span></a>
+				</li>
+				<li class="flex-stretch"></li>
+				<li class="flex-none">
+						<a href="#" data-rel="back" class="js-editupload"><span class="iconify" data-inline="false" data-icon="ic:outline-arrow-back-ios" style="font-size: 30px; margin-top:7px; margin-right: 7px;" data-rotate="180deg"></span>
+						</a>
+				</li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<input type="hidden" id="edit-upload-type">
+			<input type="hidden" id="edit-upload-id">
+			<input type="hidden" id="edit-upload-filename">
+
+			<input type="file" id="edit-upload-image" data-role="none" class="hidden">
+			<label for="edit-upload-image" class="image-picker" style="  width:100%;height:100%;background-position:top;background-size:contain;background-repeat:no-repeat;"></label>
+		</div>
+	</section>
+
+
+<script type="text/template" id="footer-nav-template">
+	<ul>
+		<li><a href="#recent-page">
+			<div class="nav-icon"><span class="iconify" data-inline="false" data-icon="mdi:map-marker" style="font-size: 27px;"></span></div>
+			<div class="nav-title">Recent</div>
+		</a></li>
+		<li><a href="#list-page">
+			<div class="nav-icon"><span class="iconify" data-inline="false" data-icon="ic:round-format-list-bulleted" style="font-size: 27px;"></span></div>
+			<div class="nav-title">List</div>
+		</a></li>
+		<li><a href="#profile-page">
+			<div class="nav-icon"><span class="iconify" data-inline="false" data-icon="ant-design:user-outlined" style="font-size: 27px;"></span></div>
+			<div class="nav-title">Profile</div>
+		</a></li>
+	</ul>
+	</script>
+	
+	
+</body>
+</html>
